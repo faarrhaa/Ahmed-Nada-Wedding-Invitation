@@ -37,8 +37,8 @@ body{
   position:relative;
 }
 
-#page-bg{position:fixed;inset:0;z-index:0;background:#2c1a00 url('bg.jpg') center center / cover no-repeat;pointer-events:none;opacity:1;transition:opacity 1.4s ease;}
-#page-bg2{position:fixed;inset:0;z-index:0;background:#2c1a00 center center / cover no-repeat;pointer-events:none;opacity:0;transition:opacity 1.4s ease;}
+#page-bg{position:fixed;inset:-20px;z-index:0;background:#2c1a00 url('bg.jpg') center center / cover no-repeat;pointer-events:none;opacity:.6;filter:blur(10px);transform:scale(1.08);transition:opacity 1.4s ease;}
+#page-bg2{position:fixed;inset:-20px;z-index:0;background:#2c1a00 center center / cover no-repeat;pointer-events:none;opacity:0;filter:blur(10px);transform:scale(1.08);transition:opacity 1.4s ease;}
 #page-overlay{position:fixed;inset:0;background:rgba(253,248,238,0.32);z-index:1;pointer-events:none;}
 
 #page-wrap{
@@ -2240,7 +2240,7 @@ function spawnGoldSparks(el){
     front.style.zIndex = 0;
     void back.offsetWidth; // force reflow so the transition re-enable takes effect
     back.style.transition = 'opacity 1.4s ease';
-    requestAnimationFrame(()=>{ back.style.opacity = 1; });
+    requestAnimationFrame(()=>{ back.style.opacity = .6; });
     topIndex = 1 - topIndex;
   }
 
