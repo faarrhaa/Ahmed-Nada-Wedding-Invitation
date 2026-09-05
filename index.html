@@ -739,8 +739,6 @@ body{
 
 .rsvp-btn{
   display:inline-block;
-  width:260px;
-  text-align:center;
   margin-top:24px;
   padding:16px 20px;
   font-family:'Cinzel',serif;
@@ -762,8 +760,6 @@ body{
 }
 .rsvp-btn-outline{
   display:inline-block;
-  width:260px;
-  text-align:center;
   margin-top:14px;
   padding:16px 20px;
   font-family:'Cinzel',serif;
@@ -1924,9 +1920,10 @@ body{
         <input type="text" id="rsvp-name-input" class="form-control" placeholder="Enter your name"/>
       </div>
       <p id="rsvp-error" style="color:var(--gold);font-weight:700;font-size:clamp(13px,2.8vw,15px);font-style:italic;margin-bottom:10px;text-align:center;"></p>
-      <button class="rsvp-btn" onclick="rsvpYes()">Joyfully Accept <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-left:2px"><circle cx="12" cy="15" r="6"/><path d="M8.5 9L12 3l3.5 6"/></svg></button>
-      <br/>
-      <button class="rsvp-btn-outline" onclick="rsvpNo()">Regretfully Decline</button>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px;">
+        <button class="rsvp-btn" style="margin-top:0;flex:0 0 auto;width:230px;padding:14px 10px;font-size:14px;letter-spacing:1.5px;text-align:center;white-space:nowrap;" onclick="rsvpYes()">Joyfully Accept</button>
+        <button class="rsvp-btn-outline" style="margin-top:0;flex:0 0 auto;width:230px;padding:14px 10px;font-size:14px;font-weight:normal;letter-spacing:1.5px;text-align:center;white-space:nowrap;" onclick="rsvpNo()">Regretfully Decline</button>
+      </div>
     </div>
 
     <div id="rsvp-confirm" style="display:none;margin-top:28px;">
@@ -2902,7 +2899,7 @@ async function submitRsvp(attending){
     if(noMsg) noMsg.style.display = attending ? 'none' : 'block';
     const c=document.getElementById('rsvp-confirm');
     c.style.display='block';
-    c.style.animation='rsvpPop .5s ease both';
+    c.style.animation='rsvpPop .5s ease both';'.rsvp-btn{'
     if(attending && typeof window.spawnConfetti==='function') window.spawnConfetti();
   }catch(e){
     console.error('RSVP failed', e);
